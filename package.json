@@ -1,7 +1,7 @@
 {
-  "name": "gulp-freemarker",
-  "version": "0.1.4",
-  "description": "A plugin for Gulp to process Freemarker template files like Java.",
+  "name": "gulp-freemarker-axd",
+  "version": "0.0.1",
+  "description": "A plugin for Gulp to process Freemarker template files like Java.only for wwww.aixuedai.com",
   "keywords": [
     "gulpplugin",
     "freemarker",
@@ -9,20 +9,20 @@
     "fmpp"
   ],
   "author": {
-    "name": "Li Yi",
-    "email": "i@ijser.cn",
-    "url": "https://github.com/ijse"
+    "name": "LiXueLong",
+    "email": "lxlneo.g@gmail.com",
+    "url": "https://github.com/lxlneo"
   },
-  "repository": "ijse/gulp-freemarker",
+  "repository": "lxlneo/gulp-freemarker",
   "scripts": {
     "test": "istanbul test ./node_modules/mocha/bin/_mocha --report html -- test/*.js --reporter spec",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
-    "freemarker.js": "^1.2.2",
     "gulp-util": "^3.0.4",
     "istanbul": "^0.4.2",
-    "through2": "^2.0.0"
+    "through2": "^2.0.0",
+    "lodash":"*"
   },
   "devDependencies": {
     "coveralls": "*",
