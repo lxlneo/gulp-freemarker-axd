@@ -51,12 +51,17 @@ function Freemarker(settings) {
   var globalData = {};
   //新增加全局数据路径
   if(settings.globalData){
+    console.log("globalData=============>",settings.globalData);
     try{
       globalData = JSON.parse(fs.readFileSync(settings.globalData,'utf-8'));
     }catch (err){
       throw  err
     }
     this.globalData = globalData;
+  }
+  if(settings.directiveUrl){
+    console.log("directiveUrl=============>",settings.directiveUrl);
+    this.directiveUrl = settings.directiveUrl;
   }
   this.options = fmpOpts;
 }
@@ -83,15 +88,29 @@ function generateConfiguration(data, done) {
 
   return result.join('\n');
 }
-
+/**
+ * 添加 DirectiveFtl 文件
+ */
+function concatDirectiveFtl(tpl,directivePath) {
+  var content = fs.readFileSync(tpl, 'utf-8');
+  var directive = fs.readFileSync(directivePath, 'utf-8');
+  content = directive + content;
+  var dest  = path.join(os.tmpDir(),'temp.axd',uuid.v4()).replace(/\\/g, '/');
+  fs.writeFileSync(dest, content);
+  return dest;
+}
 
 Freemarker.prototype.render = function (tpl, data, done) {
+  //拼装数据
   if(this.globalData){
     data = _.assign(data,this.globalData)
   }
   var dataTdd = convertDataModel(data);
+  //拼装directiveUrl到每个页面
   var tplFile = path.join(this.viewRoot, tpl).replace(/\\/g, '/');
-
+  if(this.directiveUrl){
+    tplFile = concatDirectiveFtl(tplFile,this.directiveUrl);
+  }
   // Make configuration file for fmpp
   var cfgDataObject = this.options;
   cfgDataObject.data = dataTdd;
