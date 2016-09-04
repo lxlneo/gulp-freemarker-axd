@@ -1,5 +1,5 @@
 var through = require('through2')
-	, Freemarker = require('freemarker.js')
+	, Freemarker = require('./lib/freemarker.js')
 	, PluginError = require('gulp-util').PluginError
 
 module.exports = function(options) {

@@ -1,7 +1,7 @@
 {
   "name": "gulp-freemarker-axd",
-  "version": "0.0.1",
-  "description": "A plugin for Gulp to process Freemarker template files like Java.only for wwww.aixuedai.com",
+  "version": "0.0.4",
+  "description": "A plugin base on [gulp-freemarker] and [freemarkerjs]  for Gulp to process Freemarker template files like Java.Only for sh.aixuedai.com",
   "keywords": [
     "gulpplugin",
     "freemarker",
