@@ -1,5 +1,5 @@
 
-# gulp-freemarker-axd
+# gulp-freemarker-neo
 
 
 > freemarker plugin for [gulp](https://github.com/wearefractal/gulp)
@@ -9,13 +9,13 @@
 First, install `gulp-freemarker-axd` as a development dependency:
 
 ```shell
-npm install --save-dev gulp-freemarker-axd
+npm install --save-dev gulp-freemarker-neo
 ```
 
 Then, add it to your `gulpfile.js`:
 
 ```javascript
-var freemarker = require("gulp-freemarker-axd");
+var freemarker = require("gulp-freemarker-neo");
 
 gulp.src("./mock/*.json")
 	.pipe(freemarker({
@@ -39,7 +39,7 @@ You should provide mock files, which type is json:
 ```
 
 
-* `file` is relative to `viewRoot`, gulp-freemarker-axd will read and process `${viewRoot}/${file}` file.
+* `file` is relative to `viewRoot`, gulp-freemarker-neo will read and process `${viewRoot}/${file}` file.
 
 * `data` is the data model the template required.
 
