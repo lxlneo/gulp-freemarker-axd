@@ -1,5 +1,5 @@
 {
-  "name": "gulp-freemarker-axd",
+  "name": "gulp-freemarker-neo",
   "version": "0.0.7",
   "description": "A plugin base on [gulp-freemarker] and [freemarkerjs]  for Gulp to process Freemarker template files like Java.Only for sh.aixuedai.com",
   "keywords": [
@@ -13,7 +13,7 @@
     "email": "lxlneo.g@gmail.com",
     "url": "https://github.com/lxlneo"
   },
-  "repository": "lxlneo/gulp-freemarker-axd",
+  "repository": "lxlneo/gulp-freemarker-neo",
   "scripts": {
     "test": "istanbul test ./node_modules/mocha/bin/_mocha --report html -- test/*.js --reporter spec",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
